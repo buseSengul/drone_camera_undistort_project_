@@ -77,7 +77,7 @@ sudo apt install ros-noetic-rosbash
 ### 1. Projeyi Klonla
 ```bash
 cd ~/catkin_ws/src
-git clone <repo_link>
+git clone https://github.com/buseSengul/drone_camera_undistort_project_.git
 ```
 
 ### 2. Kalibrasyon Dosyasını Yerleştir
