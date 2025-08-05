@@ -185,8 +185,8 @@ image_undistort_node çalıştırıldığında aşağıdaki ROS topic'leri otoma
 
 | Topic Adı                  | Açıklama                                                                 |
 |----------------------------|--------------------------------------------------------------------------|
-| /output/image            | Undistort (bozulması giderilmiş) edilmiş görüntü verisi (raw).           |
-| /output/image/compressed | Aynı görüntünün sıkıştırılmış hali (ağ trafiği için uygundur).           |
+| /output/image            | Undistort edilmiş görüntü verisi.           |
+| /output/image/compressed | Aynı görüntünün sıkıştırılmış hali.           |
 | /output/camera_info      | Kamera bilgileri (fx, fy, cx, cy, distortion coefficients, frame_id, vb).|
 
 ---
