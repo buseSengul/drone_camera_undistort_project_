@@ -80,8 +80,8 @@ cd ~/catkin_ws/src
 git clone https://github.com/buseSengul/drone_camera_undistort_project_.git
 cd ~/catkin_ws
 catkin_make
-echo " source ~/.bashrc
-source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+source ~/.bashrc
 
 ```
 
