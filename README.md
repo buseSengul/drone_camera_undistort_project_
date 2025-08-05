@@ -156,17 +156,19 @@ Eğer canlı kamera görüntüsü alınacaksa:
 roscore
 ```
 
-### 5. Yeni bir terminal aç ve undistort node’unu başlat:
+### 5. Başka bir terminalde bag dosyasını oynat:
+```bash
+rosbag play <dosya_adi.bag> -l
+rosbag play arducam_april_tag_640_480.bag -l
+```
+
+
+### 6. Yeni bir terminal aç ve undistort node’unu başlat:
 ```bash
 roslaunch <launch dosyası adı>.launch
 roslaunch image_undistort undistort_from_bag.launch
 ```
 
-### 6. Başka bir terminalde bag dosyasını oynat:
-```bash
-rosbag play <dosya_adi.bag> -l
-rosbag play arducam_april_tag_640_480.bag -l
-```
 
 ### 7. Görüntüyü rqt_image_view veya rqt üzerinden izle:
 ```bash
