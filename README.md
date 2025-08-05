@@ -209,9 +209,9 @@ rostopic echo /output/camera_info
 ```
 Bu komutla aşağıdaki parametreleri görebilirsiniz:
 
-	•	distortion_model: Kullanılan distortion modeli (ör. radtan, equidistant)
+	•	distortion_model: Kullanılan distortion modeli 
 	•	K: Kamera matris parametreleri
-	•	D: Distortion (bozulma) katsayıları
+	•	D: Distortion  katsayıları
 	•	P: Projeksiyon matrisi
 	•	frame_id: Görüntü çerçevesi adı
 	•	width ve height: Görüntü boyutları
