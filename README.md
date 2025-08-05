@@ -151,31 +151,24 @@ Eğer canlı kamera görüntüsü alınacaksa:
 ```
 ---
 
-### 4. Workspace Derleme
-```bash
-cd ~/catkin_ws
-catkin_make
-source devel/setup.bash
-```
-
-### 5. ROS Master Başlat
+### 4. ROS Master Başlat
 ```bash
 roscore
 ```
 
-### 6. Yeni bir terminal aç ve undistort node’unu başlat:
+### 5. Yeni bir terminal aç ve undistort node’unu başlat:
 ```bash
 roslaunch <launch dosyası adı>.launch
 roslaunch image_undistort undistort_from_bag.launch
 ```
 
-### 7.  Başka bir terminalde bag dosyasını oynat:
+### 6. Başka bir terminalde bag dosyasını oynat:
 ```bash
 rosbag play <dosya_adi.bag> -l
 rosbag play arducam_april_tag_640_480.bag -l
 ```
 
-### 8.Görüntüyü rqt_image_view veya rqt üzerinden izle:
+### 7. Görüntüyü rqt_image_view veya rqt üzerinden izle:
 ```bash
 rqt
 ```
