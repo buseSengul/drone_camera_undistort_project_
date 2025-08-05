@@ -119,7 +119,7 @@ YAML dosyasının adı ve içinde geçen üst key (cam0 gibi) doğru şekilde ya
     <param name="scale" value="$(arg scale)" />
     <param name="process_image" value="true" />
     <param name="undistort_image" value="true" />
-    <remap from="input/image" to="/usb_cam/image_raw" />
+    <remap from="input/image" to="<görüntünün yayınlandığı ROS topic>" />
   </node>
 </launch>
 ```
