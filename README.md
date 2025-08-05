@@ -177,6 +177,49 @@ rqt
 
 
 ---
+## Çıktılar ve Gözlemleme
+
+image_undistort_node çalıştırıldığında aşağıdaki ROS topic'leri otomatik olarak oluşur ve yayın yapılır:
+
+### Yayınlanan Topic'ler
+
+| Topic Adı                  | Açıklama                                                                 |
+|----------------------------|--------------------------------------------------------------------------|
+| /output/image            | Undistort (bozulması giderilmiş) edilmiş görüntü verisi (raw).           |
+| /output/image/compressed | Aynı görüntünün sıkıştırılmış hali (ağ trafiği için uygundur).           |
+| /output/camera_info      | Kamera bilgileri (fx, fy, cx, cy, distortion coefficients, frame_id, vb).|
+
+---
+
+### Topic'leri Gözlemleme Komutları
+
+#### Tüm aktif topic'leri listele
+```bash
+rostopic list
+```
+Undistort edilmiş görüntü verisini terminalde görme:
+```bash
+rostopic echo /output/image
+```
+Bu komut, görüntünün ham (raw) verisini terminal üzerinde gösterir. Genellikle header, height, width, encoding, data gibi alanları içerir. Görsel değil, veri olarak gözlemlenir.
+
+Kamera kalibrasyon bilgilerini (camera_info) görme:
+```bash
+rostopic echo /output/camera_info
+```
+Bu komutla aşağıdaki parametreleri görebilirsiniz:
+
+	•	distortion_model: Kullanılan distortion modeli (ör. radtan, equidistant)
+	•	K: Kamera matris parametreleri
+	•	D: Distortion (bozulma) katsayıları
+	•	P: Projeksiyon matrisi
+	•	frame_id: Görüntü çerçevesi adı
+	•	width ve height: Görüntü boyutları
+
+Sıkıştırılmış görüntü verisini görme:
+```bash
+rostopic echo /output/image/compressed
+```
 
 ## Notlar
 - .yaml dosyasında K parametresi şart değil, intrinsics varsa yeterlidir.
