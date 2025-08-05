@@ -184,4 +184,3 @@ rqt
 
 ---
 
-*Proje hazır! 🎉 Artık undistort edilmiş görüntüleri rqt üzerinde görebilirsiniz.*
