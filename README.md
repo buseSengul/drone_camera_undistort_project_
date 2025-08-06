@@ -137,8 +137,17 @@ YAML dosyasının adı ve içinde geçen üst key (cam0 gibi) doğru şekilde ya
   </node>
 </launch>
 ```
-      
-Eğer canlı kamera görüntüsü alınacaksa:
+
+remap işlemi için .bag dosyasında görüntünün yayınlandığı ros topic kontrol edilmeli:
+```bash
+rostopic list
+```
+
+Eğer usb_cam/image_raw ile kamera görüntüsü alınıyorsa:
+```bash
+<remap from="input/image" to="/usb_cam/image_raw" />
+```
+Eğer camera/image_raw ile kamera görüntüsü alınıyorsa:
 ```bash
 <remap from="input/image" to="/camera/image_raw" />
 ```
