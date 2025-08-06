@@ -64,8 +64,8 @@ sudo apt install ros-noetic-cv-bridge ros-noetic-vision-opencv
 ```
 
 #### 9. rosparam & diğer ROS çekirdek araçları
-Parametre yükleme ve yönetim işlemleri için kullanılır (genellikle ROS ile beraber gelir).
-Kurulum (gerekirse):
+Parametre yükleme ve yönetim işlemleri için kullanılır.
+Kurulum :
 ```bash
 sudo apt install ros-noetic-rosbash
 ```
@@ -221,14 +221,14 @@ Kamera kalibrasyon bilgilerini (camera_info) görme:
 ```bash
 rostopic echo /output/camera_info
 ```
-Bu komutla aşağıdaki parametreleri görebilirsiniz:
+Bu komutla aşağıdaki parametreleri görebilirsiniz:  
 
-   distortion_model: Kullanılan distortion modeli 
-   K: Kamera matris parametreleri
-   D: Distortion  katsayıları
-   P: Projeksiyon matrisi
-   frame_id: Görüntü çerçevesi adı
-   width ve height: Görüntü boyutları
+   distortion_model: Kullanılan distortion modeli   
+   K: Kamera matris parametreleri  
+   D: Distortion  katsayıları  
+   P: Projeksiyon matrisi  
+   frame_id: Görüntü çerçevesi adı  
+   width ve height: Görüntü boyutları  
 
 Sıkıştırılmış görüntü verisini görme:
 ```bash
@@ -240,16 +240,16 @@ Undistort edilmiş kameraya ait yeni kamera parametreleri aşağıdaki komutla .
 ```bash
 rostopic echo -n1 /output/camera_info > output_camera_info.txt
 ```
-Bu komut, /output/camera_info topic’inden 1 adet mesaj alır, output_camera_info.txt adlı dosyaya düz metin olarak kaydeder.
+Bu komut, /output/camera_info topic’inden 1 adet mesaj alır, output_camera_info.txt adlı dosyaya düz metin olarak kaydeder.  
 
-Dosyada yer alan bilgiler:
+Dosyada yer alan bilgiler:  
 
-   K: Kamera iç parametre matrisi
-   D: Distortion katsayıları
-   P: Projeksiyon matrisi
-   R: Rotation matrisi
-   width, height: Görüntü çözünürlüğü
-   frame_id: Görüntü çerçeve adı
+   K: Kamera iç parametre matrisi  
+   D: Distortion katsayıları  
+   P: Projeksiyon matrisi  
+   R: Rotation matrisi  
+   width, height: Görüntü çözünürlüğü  
+   frame_id: Görüntü çerçeve adı  
 
 Kaydedilen bu dosya, kalibrasyon doğrulaması veya başka sistemlerde tekrar kullanmak üzere referans olarak saklanabilir.
 
