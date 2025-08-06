@@ -223,12 +223,12 @@ rostopic echo /output/camera_info
 ```
 Bu komutla aşağıdaki parametreleri görebilirsiniz:
 
-	•	distortion_model: Kullanılan distortion modeli 
-	•	K: Kamera matris parametreleri
-	•	D: Distortion  katsayıları
-	•	P: Projeksiyon matrisi
-	•	frame_id: Görüntü çerçevesi adı
-	•	width ve height: Görüntü boyutları
+   distortion_model: Kullanılan distortion modeli 
+   K: Kamera matris parametreleri
+   D: Distortion  katsayıları
+   P: Projeksiyon matrisi
+   frame_id: Görüntü çerçevesi adı
+   width ve height: Görüntü boyutları
 
 Sıkıştırılmış görüntü verisini görme:
 ```bash
@@ -240,17 +240,16 @@ Undistort edilmiş kameraya ait yeni kamera parametreleri aşağıdaki komutla .
 ```bash
 rostopic echo -n1 /output/camera_info > output_camera_info.txt
 ```
-Bu komut:
-	•	/output/camera_info topic’inden 1 adet mesaj alır,
-	•	ve onu output_camera_info.txt adlı dosyaya düz metin olarak kaydeder.
+Bu komut, /output/camera_info topic’inden 1 adet mesaj alır, output_camera_info.txt adlı dosyaya düz metin olarak kaydeder.
 
- Dosyada yer alan bilgiler:
-	•	K: Kamera iç parametre matrisi
-	•	D: Distortion katsayıları
-	•	P: Projeksiyon matrisi
-	•	R: Rotation matrisi
-	•	width, height: Görüntü çözünürlüğü
-	•	frame_id: Görüntü çerçeve adı
+Dosyada yer alan bilgiler:
+
+   K: Kamera iç parametre matrisi
+   D: Distortion katsayıları
+   P: Projeksiyon matrisi
+   R: Rotation matrisi
+   width, height: Görüntü çözünürlüğü
+   frame_id: Görüntü çerçeve adı
 
 Kaydedilen bu dosya, kalibrasyon doğrulaması veya başka sistemlerde tekrar kullanmak üzere referans olarak saklanabilir.
 
