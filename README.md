@@ -103,7 +103,7 @@ source ~/.bashrc
 Config klasörüne .yaml dosyanı koy.
 
 Örnek config.yaml:
-yaml
+
 ```bash
 cam0:
   cam_overlaps: []
