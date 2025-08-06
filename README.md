@@ -235,6 +235,9 @@ Sıkıştırılmış görüntü verisini görme:
 rostopic echo /output/image/compressed
 ```
 
+### Kamera parametrelerini .txt olarak kaydetme:
+
+
 ## Notlar
 - .yaml dosyasında K parametresi şart değil, intrinsics varsa yeterlidir.
 - cam0 anahtar ismiyle uyumlu şekilde hem yaml hem de launch dosyası yapılandırılmalıdır.
