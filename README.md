@@ -70,6 +70,13 @@ Kurulum (gerekirse):
 sudo apt install ros-noetic-rosbash
 ```
 
+#### 10. Compressed görüntü desteği için:
+```bash
+sudo apt install ros-noetic-compressed-image-transport
+sudo apt install ros-noetic-compressed-depth-image-transport
+sudo apt install ros-noetic-theora-image-transport
+```
+
 ---
 
 ##  Kurulum ve Çalıştırma Adımları
