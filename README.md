@@ -236,7 +236,23 @@ rostopic echo /output/image/compressed
 ```
 
 ### Kamera parametrelerini .txt olarak kaydetme:
+undistort edilmiş kameraya ait yeni kamera parametreleri aşağıdaki komutla .txt dosyası olarak dışa aktarılabilir:
 
+rostopic echo -n1 /output/camera_info > output_camera_info.txt
+
+Bu komut:
+	•	/output/camera_info topic’inden 1 adet mesaj alır,
+	•	ve onu output_camera_info.txt adlı dosyaya düz metin olarak kaydeder.
+
+🔍 Dosyada yer alan bilgiler:
+	•	K: Kamera iç parametre matrisi
+	•	D: Distortion katsayıları
+	•	P: Projeksiyon matrisi
+	•	R: Rotation matrisi
+	•	width, height: Görüntü çözünürlüğü
+	•	frame_id: Görüntü çerçeve adı
+
+Kaydedilen bu dosya, kalibrasyon doğrulaması veya başka sistemlerde tekrar kullanmak üzere referans olarak saklanabilir.
 
 ## Notlar
 - .yaml dosyasında K parametresi şart değil, intrinsics varsa yeterlidir.
