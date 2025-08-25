@@ -1,0 +1,22 @@
+<!-- launch/undistort_nodelet.launch -->
+<launch>
+  <arg name="input_camera_name" default="/cam0" />
+  <arg name="scale" default="1.0" />
+  <arg name="calib_path" default="$(find image_undistort)/config/arducam_april_tag_640_480-camchain.yaml"/>
+
+  <rosparam file="$(arg calib_path)" command="load" />
+
+  <node pkg="nodelet" type="nodelet" name="image_undistort_manager" args="manager" output="screen" />
+
+  <node pkg="nodelet" type="nodelet" name="image_undistort"
+        args="load image_undistort/ImageUndistortNodelet image_undistort_manager"
+        output="screen">
+    <param name="input_camera_namespace" value="$(arg input_camera_name)" />
+    <param name="input_camera_info_from_ros_params" value="true" />
+    <param name="output_camera_info_source" value="auto_generated" />
+    <param name="scale" value="$(arg scale)" />
+    <param name="process_image" value="true" />
+    <param name="undistort_image" value="true" />
+    <remap from="input/image" to="/usb_cam/image_raw" />
+  </node>
+</launch>
