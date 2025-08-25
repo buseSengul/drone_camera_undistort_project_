@@ -116,11 +116,14 @@ cam0:
 ```
 
 ### 3. launch Dosyasını Düzenle
+### Projeyi node ve nodelet olmak üzere iki farklı şekilde çalıştırabilirsiniz. 2 yöntemde aynı şekilde çalıştırılmakta, çalıştırmak istediğiniz yöntemin launch dosyasını düzenleyin.
+### A. Node üzerinden undistort işlemi için launch dosyası:  
+
 YAML dosyasının adı ve içinde geçen üst key (cam0 gibi) doğru şekilde yazılmalı:
 
 ```bash
 <launch>
-  <arg name="input_camera_name" default="/cam0" />
+  <arg name="input_camera_name" default="/<yaml dosyası namespace adı>" />
   <arg name="scale" default="1.0" />
   <arg name="calib_path" default="$(find image_undistort)/config/< yaml dosya adı>.yaml"/>
   <!-- ROS parametresini cam0 altında yükle -->
@@ -172,7 +175,70 @@ Eğer camera/image_raw ile kamera görüntüsü alınıyorsa:
   </node>
 </launch>
 ```
+
 ---
+### B. Nodelet üzerinden undistort işlemi için launch dosyası: 
+```bash
+<launch>
+  <arg name="input_camera_name" default="/<yaml dosyası namespace adı>" />
+  <arg name="scale" default="1.0" />
+  <arg name="calib_path" default="$(find image_undistort)/config/<yaml dosya adı>"/>
+
+  <rosparam file="$(arg calib_path)" command="load" />
+
+  <node pkg="nodelet" type="nodelet" name="image_undistort_manager" args="manager" output="screen" />
+
+  <node pkg="nodelet" type="nodelet" name="image_undistort"
+        args="load image_undistort/ImageUndistortNodelet image_undistort_manager"
+        output="screen">
+    <param name="input_camera_namespace" value="$(arg input_camera_name)" />
+    <param name="input_camera_info_from_ros_params" value="true" />
+    <param name="output_camera_info_source" value="auto_generated" />
+    <param name="scale" value="$(arg scale)" />
+    <param name="process_image" value="true" />
+    <param name="undistort_image" value="true" />
+    <remap from="input/image" to="<görüntünün yayınlandığı ROS topic>" />
+  </node>
+</launch>
+```
+remap işlemi için .bag dosyasında görüntünün yayınlandığı ros topic kontrol edilmeli:
+```bash
+rostopic list
+```
+
+Eğer usb_cam/image_raw ile kamera görüntüsü alınıyorsa:
+```bash
+<remap from="input/image" to="/usb_cam/image_raw" />
+```
+Eğer camera/image_raw ile kamera görüntüsü alınıyorsa:
+```bash
+<remap from="input/image" to="/camera/image_raw" />
+```
+
+Örnek launch:
+```bash
+<launch>
+  <arg name="input_camera_name" default="/cam0" />
+  <arg name="scale" default="1.0" />
+  <arg name="calib_path" default="$(find image_undistort)/config/arducam_april_tag_640_480-camchain.yaml"/>
+
+  <rosparam file="$(arg calib_path)" command="load" />
+
+  <node pkg="nodelet" type="nodelet" name="image_undistort_manager" args="manager" output="screen" />
+
+  <node pkg="nodelet" type="nodelet" name="image_undistort"
+        args="load image_undistort/ImageUndistortNodelet image_undistort_manager"
+        output="screen">
+    <param name="input_camera_namespace" value="$(arg input_camera_name)" />
+    <param name="input_camera_info_from_ros_params" value="true" />
+    <param name="output_camera_info_source" value="auto_generated" />
+    <param name="scale" value="$(arg scale)" />
+    <param name="process_image" value="true" />
+    <param name="undistort_image" value="true" />
+    <remap from="input/image" to="/usb_cam/image_raw" />
+  </node>
+</launch>
+```
 
 ### 4. ROS Master Başlat
 ```bash
