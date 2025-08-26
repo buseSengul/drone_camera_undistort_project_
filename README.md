@@ -116,10 +116,10 @@ cam0:
 ```
 
 ### 3. launch Dosyasını Düzenle
-#### Projeyi node ve nodelet olmak üzere iki farklı şekilde çalıştırabilirsiniz. 2 yöntemde aynı şekilde çalıştırılmakta, çalıştırmak istediğiniz yöntemin launch dosyasını düzenleyin.
+#### Projeyi node ve nodelet olmak üzere iki farklı şekilde çalıştırabilirsiniz. 2 yöntemin çalıştırılma adımları aynıdır sadece launch dosyası farklı8lık gösterir. Çalıştırmak istediğiniz yöntemin launch dosyasını düzenleyin.
 ### A. Node üzerinden undistort işlemi için launch dosyası:  
 
-YAML dosyasının adı ve içinde geçen üst key (cam0 gibi) doğru şekilde yazılmalı:
+YAML dosyasının adı ve içinde geçen üst key (cam0) doğru şekilde yazılmalı:
 
 ```bash
 <launch>
