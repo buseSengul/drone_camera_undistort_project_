@@ -7,12 +7,12 @@ Bu proje, .bag formatındaki ROS görüntülerini Kalibrasyon verilerine göre d
 ## Gerekli Bağımlılıklar
 
 ### Otomatik Yükleme:
-Bu komut ile package.xml dosyasındaki bağımlılıklar kurulur fakat bir hata alınması halinde aşağıdaki komutlarla manuel olarak hata alınan bağımlılıklar tek tek kurulabilir.
+
 ```bash
 cd ~/catkin_ws
 rosdep install --from-paths src --ignore-src -r -y
 ```
-
+Bu komut ile package.xml dosyasındaki bağımlılıklar kurulur fakat bir hata alınması halinde aşağıdaki komutlarla manuel olarak hata alınan bağımlılıklar tek tek kurulabilir.
 
 ###  Manuel Yükleme: 
 #### 1. ROS Noetic (Ubuntu 20.04 için)
