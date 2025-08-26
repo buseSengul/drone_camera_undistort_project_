@@ -33,44 +33,44 @@ Projeyi derlemek ve workspace yönetimi için kullanılır.
 sudo apt install python3-catkin-tools
 ```
 
-#### 4. Görüntüleme için rqt ve eklentileri
+#### 3. Görüntüleme için rqt ve eklentileri
 Görüntüleri görselleştirmek için RQT GUI ve rqt_image_view eklentisi gerekir.
 ```bash
 sudo apt install ros-noetic-rqt ros-noetic-rqt-image-view
 ```
 
-#### 5. USB Kamera Desteği 
+#### 4. USB Kamera Desteği 
 Kameradan canlı görüntü almayı sağlar. rostopic: /usb_cam/image_raw bu paketten gelir.
 ```bash
 sudo apt install ros-noetic-usb-cam
 ```
 
-#### 6. rosbag ile kayıt oynatımı için:
+#### 5. rosbag ile kayıt oynatımı için:
 Kayıtlı .bag dosyalarını oynatmak için kullanılır.
 ```bash
 sudo apt install ros-noetic-rosbag
 ```
 
-#### 7. image_transport 
+#### 6. image_transport 
 Görüntü mesajlarını yayınlamak ve abone olmak için kullanılır.
 ```bash
 sudo apt install ros-noetic-image-transport
 ```
 
-#### 8. cv_bridge 
+#### 7. cv_bridge 
 ROS ile OpenCV arasında görüntü dönüşümü sağlar.
 ```bash
 sudo apt install ros-noetic-cv-bridge ros-noetic-vision-opencv
 ```
 
-#### 9. rosparam & diğer ROS çekirdek araçları
+#### 8. rosparam & diğer ROS çekirdek araçları
 Parametre yükleme ve yönetim işlemleri için kullanılır.
 Kurulum :
 ```bash
 sudo apt install ros-noetic-rosbash
 ```
 
-#### 10. Görüntü desteği için:
+#### 9. Görüntü desteği için:
 compressed:JPEG formatında sıkıştırma
 ```bash
 sudo apt install ros-noetic-compressed-image-transport
