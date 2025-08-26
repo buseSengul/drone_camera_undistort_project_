@@ -52,7 +52,7 @@ sudo apt install ros-noetic-rosbag
 ```
 
 #### 6. image_transport 
-Görüntü mesajlarını yayınlamak ve abone olmak için kullanılır. (Compressed görüntü elde etmek için)
+Görüntü mesajlarını yayınlamak ve abone olmak için kullanılır.
 ```bash
 sudo apt install ros-noetic-image-transport
 ```
